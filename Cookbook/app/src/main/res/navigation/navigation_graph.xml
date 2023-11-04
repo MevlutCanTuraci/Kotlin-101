@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.turacican.cookbook.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_cookFragment"
+            app:destination="@id/cookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookFragment"
+        android:name="com.turacican.cookbook.CookFragment"
+        android:label="fragment_cook"
+        tools:layout="@layout/fragment_cook" >
+        <action
+            android:id="@+id/action_cookFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="Info"
+            app:argType="string" />
+        <argument android:name="Id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
